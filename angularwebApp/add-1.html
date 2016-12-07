@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html >
+        <head>
+            <meta charset="utf-8">  
+            <title>测试angularjs</title>
+            <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        </head>
+        <body  ng-app="myApp" ng-controller="myCtrl">
+            <p>姓<input type="text" ng-model="fristName"></p>
+            <p>名<input type="text" ng-model="lastName"></p>
+            <p>我的名字是：{{fristName}}{{lastName}}</p>
+
+            <script>
+                var app=angular.module("myApp",[]);
+                    app.controller("myCtrl",function($scope){
+                        $scope.fristName="john";
+                        $scope.lastName="doe"; 
+                    })
+            </script>
+        
+
+        </body>
+    </html>
+</html>
+

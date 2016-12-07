@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>数字相加</title>
+            <meta charset="utf-8">
+            <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        </head>
+        <body ng-app="myApp" ng-controller="myCtrl">
+            <p>我的第一个表达式{{5+5}}</p>
+            <div ng-init="firstName='john'"></div>
+            <p>我的名字是<span ng-bind="firstName"></span></p>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <p>尝试修改以下表单。</p>
+            <p>名<input type="text" value="john" ng-model="ming"></p>
+            <p>姓<input type="text" value="doe" ng-model="xing"></p>
+            <p>姓名{{xing}}{{ming}}</p>
+
+            <script>
+                var app=angular.module("myApp",[]);
+                app.controller("myCtrl",function($scope){
+                    $scope.xing="doe";
+                    $scope.ming="john";
+                })
+            </script>
+        </body>
+    </html>
+</html>
