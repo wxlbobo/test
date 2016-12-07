@@ -9,12 +9,12 @@
             <p>姓<input type="text" ng-model="fristName"></p>
             <p>名<input type="text" ng-model="lastName"></p>
             <p>我的名字是：{{fristName}}{{lastName}}</p>
-
             <script>
                 var app=angular.module("myApp",[]);
                     app.controller("myCtrl",function($scope){
-                        $scope.fristName="john";
-                        $scope.lastName="doe"; 
+                        var vm = $scope;
+                        vm.fristName="john";
+                        vm.lastName="doe"; 
                     })
             </script>
         

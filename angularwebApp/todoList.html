@@ -13,7 +13,7 @@
             </div>
             <h1>任务列表</h1>
             <ul>
-                <li ng-repeat="item in tasks" class="list-grp-item">{{item}}</li>
+                <li ng-repeat="item in tasks track by $index" class="list-grp-item">{{item}}</li>
                 
             </ul>
 
