@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta name="" content="" charset="utf-8">
+        <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        <title></title>
+        <style>
+            .error{
+                bolder{
+
+                }
+            }
+        </style>
+    </head>
+   
+
+    <body ng-app="myApp" ng-controller="myCtrl" >
+        <form name="signUpForm" ng-submit = "submitForm()">
+            <div class="form-group">
+                <label for="">用户名</label>
+                <input name="userName" 
+                       ng-model="userName"
+                       ng-class="{'error':signUpForm.userName.$invalid && signUpForm.userName.$touched}" 
+                       class="form-control"
+                       ng-minlength="6"
+                       required>
+                       
+            </div>
+            <botton type="submit" ng-disabled=""></botton>
+            <!--<div ng-if="signUpForm.userName.$invalid && signUpForm.userName.$touched">请检查您的输入</div>
+            <div ng-if = "signUpForm.userName.$valid">
+                <div>ddddddddddddddffffffffffffffffffvvvvvvvvvvv</div>
+                <div>eeeeeeeeeeeeeeeeeeee</div>
+                <div>ffffffffffffffffffff</div>
+
+            </div>-->
+            
+
+        </form>
+        <script>
+            var app = angular.module('myApp',[]);
+                app.controller('myCtrl',function($scope){
+                   
+                    $scope.submitForm = function(){
+                        console.log('表格提交了')
+                    }
+                })
+        </script>
+    </body>
+</html>
+
+

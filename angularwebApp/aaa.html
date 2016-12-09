@@ -1,10 +1,21 @@
+<!DOCTYPE>
 <html>
     <head>
-        <div class="div1"></div>
-        <div class="div1"></div>
-        <div class="div1"></div>
-        <div class="div1"></div>
-        <div class="div1"></div>
-        <div class="div1"></div>
+        <meta name="" content="" charset="utf-8">
+        <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        <title>数组</title>
     </head>
+   
+
+    <body ng-app="">
+         <div ng-init="names=[
+                       {name:'武秀丽',age:'18'},
+                       {name:'王文博',age:'28'},
+                       {name:'王紫萱',age:'1'}]">
+             <p ng-repeat="x in names">我的名字是{{x.name}},我的年龄是{{x.age}}</p>
+         </div>
+    </span>
+    </body>
 </html>
+
+
