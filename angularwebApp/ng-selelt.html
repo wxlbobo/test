@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta name="" content="" charset="utf-8">
+        <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        <title></title>
+    </head>
+   
+
+    <body ng-app="myApp" ng-controller="myCtrl">
+         <select ng-model="myOption" ng-options= "x.value as x.label group by x.group for x in myOptions">
+             <option value="">-- 请选择 --</option>
+         </select>
+            <p> {{myOption}}</p>
+    </body>
+    <script>
+    var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.myOptions = [{"value":28,"group":"分组1","label":"武秀丽"},
+                                {"value":26,"group":"分组2","label":"王文博"},
+                                {"value":2,"group":"分组2","label":"王紫萱"},
+            ]
+        })
+
+    </script>
+
+</html>
+
+

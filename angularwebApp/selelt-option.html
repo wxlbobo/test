@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta name="" content="" charset="utf-8">
+        <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        <title></title>
+    </head>
+   
+
+    <body ng-app="myApp" ng-controller="myCtrl">
+         <select ng-model="111" ng-options="x for x in names"></select>
+         <h2>演示了ng-options的使用</h2>
+         <select name="" id="">
+             <option value="" ng-repeat="a in zimus">{{a}}</option>
+         </select>
+
+    </body>
+    <script>
+    var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.names = ["google","baidu","zhongsou"];
+        })
+        app.controller('myCtrl',function($scope){
+            $scope.zimus = ["aaa","bbb","ccc"];
+        })
+
+    </script>
+
+</html>
+
+

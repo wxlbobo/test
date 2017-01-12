@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta name="" content="" charset="utf-8">
+        <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        <title></title>
+    </head>
+   
+    <body ng-app="myApp" ng-controller="myCtrl">
+        <div class="div"> 当前页面URL:
+            <span>{{myUrl}}</span>
+        </div>
+         
+    </body>
+    <script>
+    var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope , $location){
+            $scope.myUrl = $location.absUrl();
+               
+        })
+   
+    </script>
+</html>
+
+

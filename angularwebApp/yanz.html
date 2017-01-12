@@ -3,19 +3,19 @@
     <head>
         <meta name="" content="" charset="utf-8">
         <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        <script src='http://cdn.bootcss.com/jquery/3.1.1/jquery.js'></script>
         <title></title>
         <style>
-            .error{
-                bolder{
-
-                }
-            }
+        .error{
+            border: 2px solid #a30;
+        }
         </style>
     </head>
    
 
     <body ng-app="myApp" ng-controller="myCtrl" >
         <form name="signUpForm" ng-submit = "submitForm()">
+            <!--用户名-->
             <div class="form-group">
                 <label for="">用户名</label>
                 <input name="userName" 
@@ -24,18 +24,42 @@
                        class="form-control"
                        ng-minlength="6"
                        required>
-                       
             </div>
-            <botton type="submit" ng-disabled=""></botton>
-            <!--<div ng-if="signUpForm.userName.$invalid && signUpForm.userName.$touched">请检查您的输入</div>
-            <div ng-if = "signUpForm.userName.$valid">
+            
+            <span ng-if="signUpForm.userName.$invalid && signUpForm.userName.$touched">请检查您的输入</span>
+            <span ng-if = "signUpForm.userName.$valid">
                 <div>ddddddddddddddffffffffffffffffffvvvvvvvvvvv</div>
                 <div>eeeeeeeeeeeeeeeeeeee</div>
                 <div>ffffffffffffffffffff</div>
+             </span>
 
-            </div>-->
+
+            <!--密码-->
+            <label for="">密码</label>
+            <input type="text" 
+                   name="password"
+                   ng-model="password"
+                   ng-minlength="6"
+                   ng-maxlength="20"
+                   id='password'
+                   required>
+    
+            <span ng-if="signUpForm.password.$invalid && signUpForm.password.$touched">请输入6位以上的密码</span>                                                                                     
             
+            <!--确认密码-->
+            <label for="">确认密码</label>
+            <input type="text" 
+                   name="qr_password"
+                   ng-model="qr_password"
+                   required>
+                   <!--pw-check='password'-->
+                   
+            <span ng-if="password && qr_password && password != qr_password">两次提交的密码不一样</span>
 
+            <!--<span ng-if="!signUpForm.qr_password.$pristine && signUpForm.qr_password.$valid">密码不一致</span>-->
+            <button type="submit" ng-disabled="signUpForm.userName.$invalid">提交</button>
+            
+ 
         </form>
         <script>
             var app = angular.module('myApp',[]);
@@ -45,6 +69,30 @@
                         console.log('表格提交了')
                     }
                 })
+                // .directive('pwCheck', [function () {  
+                //     return {  
+                //         require: "ngModel",  
+                //         link: function(scope, elem, attrs, ctrl) {  
+                //             console.log(attrs);  
+                //             console.log(elem);  
+                //             var otherInput = elem.inheritedData("$myCtrl")[attrs.pwCheck];  
+                //             console.log(otherInput);  
+                
+                //             ctrl.$parsers.push(function(value) {  
+                //                 if(value === otherInput.$viewValue) {  
+                //                     ctrl.$setValidity("repeat", true);  
+                //                     return value;  
+                //                 }  
+                //                 ctrl.$setValidity("repeat", false);  
+                //             });  
+                
+                //             otherInput.$parsers.push(function(value) {  
+                //                 ctrl.$setValidity("repeat", value === ctrl.$viewValue);  
+                //                 return value;  
+                //             });  
+                //         }  
+                //     };  
+                // }]);  
         </script>
     </body>
 </html>
